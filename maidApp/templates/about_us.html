@@ -1,0 +1,129 @@
+<!--about_us.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    
+    <link href="static/css/styles.css" rel="stylesheet" />
+    <link href="static/css/chatbot.css" rel="stylesheet" />
+
+    <title>About Us - Executive Maids</title>
+    <style>
+         /* Background Image from static folder */
+  body {
+    background-image: url("{{ url_for('static', filename='images/bg.jpg') }}");
+    background-size: cover;
+    background-position: center;
+    color: #0c31d6;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    margin: 0;
+}
+
+        .about-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .about-container:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #007bff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .services-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .services-list li {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .services-list li:hover {
+            background-color: #45a049;
+        }
+
+        .back-button {
+            display: block;
+            width: 100px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="about-container">
+        <h2>About Us - Executive Maids</h2>
+        <p>Welcome to Executive Maids, your trusted partner for all your household needs. We specialize in providing top-notch services to make your life easier and more comfortable. Our team of professionals is dedicated to delivering the highest quality of service with trust, safety, and professionalism.</p>
+        <p>Our services include:</p>
+        <ul class="services-list">
+            <li>House Cleaning</li>
+            <li>Cooking Food</li>
+            <li>Child Caring</li>
+            <li>Elder Caring</li>
+            <li>Other House Related Works</li>
+        </ul>
+        <p>At Executive Maids, we understand the importance of a clean and well-maintained home. Our experienced staff is here to ensure that your home is spotless, your meals are delicious, and your loved ones are well taken care of. Contact us today to experience the best in home care services.</p>
+        <a href="javascript:history.back()" class="back-button">Back</a>
+    </div>
+
+        <!-- Chatbot Toggle Button -->
+        <button id="chatbot-button">💬</button>
+
+        <!-- Chatbot Window -->
+        <div id="chatbot-window" class="chatbot-window"
+            style="display: none; position: fixed; bottom: 80px; right: 20px; width: 300px; background-color: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); padding: 10px;">
+            <div id="chatbot-header"
+                style="font-size: 18px; font-weight: bold; padding: 10px; background-color: #007bff; color: white; border-radius: 8px 8px 0 0;">
+                Maid Service Chatbot
+            </div>
+            <div id="chatbot-messages"
+                style="overflow-y: auto; max-height: 200px; margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
+                <!-- Messages will be displayed here -->
+            </div>
+            <input id="chatbot-input" type="text" placeholder="Ask me anything..."
+                style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
+            <button id="send-message" class="btn btn-primary"
+                style="width: 100%; border-radius: 8px; margin-top: 5px;">Send</button>
+        </div>
+        <script src="static/js/script.js"></script>
+        <script src="static/js/chatbot.js"></script>
+</body>
+</html>

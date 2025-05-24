@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Customer Review</title>
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='images/bg.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .review-card {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .review-card:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 30px;
+            color: #ffd700;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .star-rating input:checked ~ label,
+        .star-rating input:hover ~ label {
+            color: #ff4500;
+        }
+
+        .comment-box {
+            width: 100%;
+            border-radius: 5px;
+            padding: 12px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .comment-box:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .submit-btn {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .review-message {
+            display: none;
+            color: green;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="review-card text-center">
+        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile Picture" class="profile-pic">
+        <h3>Customer Name</h3>
+        <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5"><label for="star5">&#9733;</label>
+            <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+            <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+            <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+            <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+        </div>
+        <textarea class="comment-box" rows="4" placeholder="Write your comment here..."></textarea>
+        <button type="button" class="submit-btn" onclick="submitReview()">Submit</button>
+        <div id="reviewMessage" class="review-message">Review Submitted. Thank you!</div>
+        <br> <br> 
+        <button type="button" class="submit-btn"  onclick="window.location.href='index.html';">Home</button>
+
+    </div>
+
+    <script>
+        function submitReview() {
+            // Prevent page refresh
+            event.preventDefault();
+
+            // Show the "Review Submitted" message
+            document.getElementById('reviewMessage').style.display = 'block';
+
+            // Optionally, hide the submit button to prevent multiple submissions
+            document.querySelector('.submit-btn').style.display = 'none';
+
+            // You can also hide the comment area or add more functionality here
+            
+        }
+    </script>
+</body>
+</html>

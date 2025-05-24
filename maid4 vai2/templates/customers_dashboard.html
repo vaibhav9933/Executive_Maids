@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Customers Dashboard</title>
+
+    <style>
+        /* Custom CSS */
+        body {
+            background: url("{{ url_for('static', filename='images/bg.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 12px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Customers Dashboard</h2>
+        <a href="/logout" class="btn btn-danger">Logout</a>
+
+        <div class="container mt-5">
+            <h1>Welcome, {{ session['email'] }}</h1>
+
+            <h3>Available Maids</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Skills</th>
+                        <th>Food</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Priyanka Sharma</td>
+                        <td>Mumbai</td>
+                        <td>Cleaning, Cooking, Child Care</td>
+                        <td>Veg</td>
+                        <td>
+                            <button type="button" class="btn btn-primary book-btn" data-maid-id="1" data-maid-name="Priyanka Sharma">Book</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Anita Desai</td>
+                        <td>Bangalore</td>
+                        <td>Cleaning, Elder Care</td>
+                        <td>Veg</td>
+                        <td>
+                            <button type="button" class="btn btn-primary book-btn" data-maid-id="2" data-maid-name="Anita Desai">Book</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Rani</td>
+                        <td>Delhi</td>
+                        <td>Cooking, Cleaning</td>
+                        <td>Both</td>
+                        <td>
+                            <button type="button" class="btn btn-primary book-btn" data-maid-id="3" data-maid-name="Rani">Book</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Geeta Kumari</td>
+                        <td>Kolkata</td>
+                        <td>Child Care, Cooking</td>
+                        <td>Non-Veg</td>
+                        <td>
+                            <button type="button" class="btn btn-primary book-btn" data-maid-id="4" data-maid-name="Geeta Kumari">Book</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Neeta Verma</td>
+                        <td>Chennai</td>
+                        <td>Cleaning, Elder Care, Cooking</td>
+                        <td>Veg</td>
+                        <td>
+                            <button type="button" class="btn btn-primary book-btn" data-maid-id="5" data-maid-name="Neeta Verma">Book</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Booking Form Modal (Hidden initially) -->
+    <div class="modal" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Booking Form</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="bookingForm" action="/submit-booking" method="POST">
+                        <input type="hidden" name="maid_id" id="maid_id">
+                        <input type="hidden" name="maid_name" id="maid_name">
+
+                        <div class="form-group">
+                            <label for="customer_name">Your Name</label>
+                            <input type="text" id="customer_name" name="customer_name" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea id="address" name="address" class="form-control" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Submit Booking</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript for dynamically filling the form based on the maid clicked
+        $(document).ready(function() {
+            $('.book-btn').click(function() {
+                var maidId = $(this).data('maid-id');
+                var maidName = $(this).data('maid-name');
+
+                // Fill the hidden fields with maid data
+                $('#maid_id').val(maidId);
+                $('#maid_name').val(maidName);
+
+                // Show the booking form modal
+                $('#bookingModal').modal('show');
+            });
+        });
+    </script>
+</body>
+</html>
