@@ -1,6 +1,6 @@
-# MaidEase 🧹👩‍🍳
+# Executive_Maid 🧹👩‍🍳
 
-**MaidEase** is a secure and user-friendly web application that allows users to find, book, and manage reliable domestic help such as maids for cleaning, cooking, babysitting, and elder care. Built with Flask (Python) and MySQL on the backend, and HTML, CSS, JS, and Bootstrap on the frontend.
+**Executive_Maid** is a secure and user-friendly web application that allows users to find, book, and manage reliable domestic help such as maids for cleaning, cooking, babysitting, and elder care. Built with Flask (Python) and MySQL on the backend, and HTML, CSS, JS, and Bootstrap on the frontend.
 
 ---
 
