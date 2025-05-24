@@ -96,10 +96,17 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 This project is licensed under the MIT License.
 ---
 ## 📸 Screenshots
+![Image](https://github.com/user-attachments/assets/9e973275-36d4-4664-bd7c-0e9ec68350bd)
+![Image](https://github.com/user-attachments/assets/09fd5168-59ea-46c7-90e7-ff57d3910280)
+![Image](https://github.com/user-attachments/assets/de1ad3bb-f8e0-4044-abfb-55a0b8da8052)
+![Image](https://github.com/user-attachments/assets/a28859a8-ad82-4d9d-b623-d5b4f1fb7766)
+![Image](https://github.com/user-attachments/assets/eadb7ebd-e73d-4fff-b172-65eadc71aa98)
+![Image](https://github.com/user-attachments/assets/3990a82b-bd6d-4260-8e7d-52e7adc49d43)
+![Image](https://github.com/user-attachments/assets/e8cb8a88-1f4c-4292-9606-cdcc573999a7)
 ---
 👤 Author
 Vaibhav Rahane
-📧 Vaibhavrahane37@gmail.com
+📧 Vaibhavrahane36@gmail.com
 📱 +91 8806142916
 🔗 LinkedIn
 
@@ -107,8 +114,7 @@ Vaibhav Rahane
 ---
 
 ✅ Just replace the following with your actual links:
-- `https://github.com/your-username/maidease.git`
+- https://github.com/vaibhav9933/Executive_Maids
+- https://www.linkedin.com/in/vaibhav-rahane-2871052a5/
 - `https://your-live-link.com`
 - `https://loom.com/share/your-video-link`
-
-Let me know if you also want a `.env.example` or `requirements.txt` template!
