@@ -45,6 +45,20 @@
 └── requirements.txt # Python dependencies
 
 
+## 📸 Snap_Shorts
+
+![Image](https://github.com/user-attachments/assets/43d1ff7e-a0c1-42e1-94f1-9357b353331d)
+
+![Image](https://github.com/user-attachments/assets/702c105e-1570-455c-82af-8a446702c260)
+
+![Image](https://github.com/user-attachments/assets/5809b019-2fd7-4b15-b815-b366272b0ffd)
+
+![Image](https://github.com/user-attachments/assets/0ff175c8-5bf7-4a7c-b0ae-46518ab4eb1f)
+
+![Image](https://github.com/user-attachments/assets/e71ddaae-09e4-410f-b3da-69a8b1fe5436)
+
+![Image](https://github.com/user-attachments/assets/ad7449d8-9cfe-4569-8ada-88fea3ec533c)
+
 ---
 
 ## 🛠️ Installation & Setup
