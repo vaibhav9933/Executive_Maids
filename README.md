@@ -94,16 +94,21 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 📄 License
 This project is licensed under the MIT License.
----
+
 ## 📸 Screenshots
-![Image](https://github.com/user-attachments/assets/9e973275-36d4-4664-bd7c-0e9ec68350bd)
-![Image](https://github.com/user-attachments/assets/09fd5168-59ea-46c7-90e7-ff57d3910280)
-![Image](https://github.com/user-attachments/assets/de1ad3bb-f8e0-4044-abfb-55a0b8da8052)
-![Image](https://github.com/user-attachments/assets/a28859a8-ad82-4d9d-b623-d5b4f1fb7766)
-![Image](https://github.com/user-attachments/assets/eadb7ebd-e73d-4fff-b172-65eadc71aa98)
-![Image](https://github.com/user-attachments/assets/3990a82b-bd6d-4260-8e7d-52e7adc49d43)
-![Image](https://github.com/user-attachments/assets/e8cb8a88-1f4c-4292-9606-cdcc573999a7)
----
+![Image](https://github.com/user-attachments/assets/43d1ff7e-a0c1-42e1-94f1-9357b353331d)
+
+![Image](https://github.com/user-attachments/assets/702c105e-1570-455c-82af-8a446702c260)
+
+![Image](https://github.com/user-attachments/assets/5809b019-2fd7-4b15-b815-b366272b0ffd)
+
+![Image](https://github.com/user-attachments/assets/0ff175c8-5bf7-4a7c-b0ae-46518ab4eb1f)
+
+![Image](https://github.com/user-attachments/assets/e71ddaae-09e4-410f-b3da-69a8b1fe5436)
+
+![Image](https://github.com/user-attachments/assets/ad7449d8-9cfe-4569-8ada-88fea3ec533c)
+
+
 👤 Author
 Vaibhav Rahane
 📧 Vaibhavrahane36@gmail.com
