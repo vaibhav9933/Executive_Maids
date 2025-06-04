@@ -119,8 +119,6 @@ Vaibhav Rahane
 
 
 ---
-
-✅ Just replace the following with your actual links:
 - https://github.com/vaibhav9933/Executive_Maids
 - https://www.linkedin.com/in/vaibhav-rahane-2871052a5/
 - `https://your-live-link.com`
